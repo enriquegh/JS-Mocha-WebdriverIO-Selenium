@@ -10,7 +10,12 @@ exports.config = {
     //
     user: process.env.SAUCE_USERNAME,
     key: process.env.SAUCE_ACCESS_KEY,
+    sauceConnect:true,
     
+    sauceConnectOpts: {
+        noSslBumpDomains: "all",
+        verbose: true
+    },
     
     //
     // ==================
@@ -56,9 +61,9 @@ exports.config = {
         // 5 instance gets started at a time.
         //maxInstances: 5,
         //
-      {browserName: 'firefox', platform: 'Windows 10', version: '41.0'},
-      {browserName: 'chrome', platform: 'OS X 10.10', version: '45.0'},
-      {browserName: 'internet explorer', platform: 'Windows 7', version: '10'}
+      {browserName: 'firefox', platform: 'Windows 10', version: '46.0'},
+      {browserName: 'chrome', platform: 'OS X 10.10', version: '55.0'},
+      {browserName: 'safari', platform: 'OS X 10.10', version: '8.0'}
     ],
     //
     // ===================
@@ -72,7 +77,7 @@ exports.config = {
     sync: true,
     //
     // Level of logging verbosity: silent | verbose | command | data | result | error
-    logLevel: 'error',
+    logLevel: 'verbose',
     //
     // Enables colors for log output.
     coloredLogs: true,
@@ -92,7 +97,7 @@ exports.config = {
     connectionRetryTimeout: 90000,
     //
     // Default request retries count
-    connectionRetryCount: 3,
+    connectionRetryCount: 1,
     //
     // Initialize the browser instance with a WebdriverIO plugin. The object should have the
     // plugin name as key and the desired plugin options as properties. Make sure you have
